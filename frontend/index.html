@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StackForge AI - The Ultimate AI Stack Optimizer & Workflow Recommender. Build your perfect AI pipeline in seconds.">
+    <meta name="keywords" content="AI, Artificial Intelligence, Workflow, LLM, OpenAI, Claude, Automation">
+    <meta name="author" content="StackForge AI">
+    <title>StackForge AI | Build Your AI Stack</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        dark: '#0f172a',
+                        primary: '#3b82f6',
+                        accent: '#8b5cf6'
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+<body class="bg-dark text-slate-200 font-sans min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-accent/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <header class="w-full py-6 px-8 flex justify-between items-center glass sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <i class="fa-solid fa-layer-group text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"></i>
+            <h1 class="text-2xl font-bold tracking-tight text-white">StackForge<span class="text-primary">AI</span></h1>
+        </div>
+        <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
+            <a href="#" class="hover:text-white transition-colors">Features</a>
+            <a href="#" class="hover:text-white transition-colors">Documentation</a>
+            <a href="https://github.com/ysuffkibarr/StackForgeAI" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col items-center justify-center px-4 py-16 relative z-10">
+        
+        <div class="text-center max-w-3xl mb-12 animate-fade-in-up">
+            <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                Architect Your Perfect <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">AI Workflow</span>
+            </h2>
+            <p class="text-lg text-slate-400">Describe what you want to build. Our engine analyzes models, costs, and performance to give you the ultimate step-by-step recipe.</p>
+        </div>
+
+        <div class="w-full max-w-2xl glass rounded-2xl p-8 shadow-2xl animate-fade-in-up" style="animation-delay: 0.2s;">
+            <form id="ai-form" class="flex flex-col gap-6">
+                
+                <div>
+                    <label for="task" class="block text-sm font-semibold text-slate-300 mb-2">What are you trying to build?</label>
+                    <textarea id="task" rows="4" required placeholder="e.g., I want to code a mobile app from scratch and generate a logo for it..." class="w-full bg-slate-800/50 border border-slate-700 rounded-xl p-4 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="budget" class="block text-sm font-semibold text-slate-300 mb-2"><i class="fa-solid fa-wallet mr-2 text-primary"></i>Budget Priority</label>
+                        <select id="budget" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:ring-2 focus:ring-primary appearance-none transition-all">
+                            <option value="balanced">Balanced (Recommended)</option>
+                            <option value="cheap">Cost-Effective (Free/Cheap)</option>
+                            <option value="premium">Premium (Best Quality)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="speed" class="block text-sm font-semibold text-slate-300 mb-2"><i class="fa-solid fa-bolt mr-2 text-accent"></i>Speed Priority</label>
+                        <select id="speed" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:ring-2 focus:ring-primary appearance-none transition-all">
+                            <option value="balanced">Balanced</option>
+                            <option value="fast">High Speed</option>
+                            <option value="quality">High Accuracy</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" id="submit-btn" class="mt-4 w-full bg-gradient-to-r from-primary to-accent hover:from-blue-600 hover:to-purple-600 text-white font-bold py-4 rounded-xl shadow-lg transform transition-all hover:-translate-y-1 hover:shadow-primary/30 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Generate AI Recipe</span>
+                </button>
+            </form>
+        </div>
+
+        <div id="loading" class="hidden flex-col items-center mt-12 animate-pulse-slow">
+            <div class="w-12 h-12 border-4 border-slate-700 border-t-primary rounded-full animate-spin mb-4"></div>
+            <p class="text-slate-400 font-medium">Forging your AI stack...</p>
+        </div>
+
+        <div id="results" class="hidden w-full max-w-3xl mt-12 animate-fade-in-up">
+            <div class="glass rounded-2xl p-8 border border-accent/30">
+                <h3 class="text-2xl font-bold text-white mb-2"><i class="fa-solid fa-check-circle text-green-400 mr-2"></i>Optimized Stack Ready</h3>
+                <p id="overall-strategy" class="text-slate-400 mb-8 pb-6 border-b border-slate-700/50"></p>
+                
+                <div id="steps-container" class="flex flex-col gap-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
+                    </div>
+                
+                <div id="alternative-option" class="mt-8 pt-6 border-t border-slate-700/50 text-sm text-slate-400 hidden">
+                    <i class="fa-solid fa-lightbulb text-yellow-500 mr-2"></i><span id="alt-text"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full py-6 text-center text-slate-500 text-sm border-t border-white/5 relative z-10">
+        <p>&copy; 2026 StackForge AI. Designed for modern builders.</p>
+    </footer>
+
+    <script>
+        document.getElementById('ai-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const task = document.getElementById('task').value;
+            const budget = document.getElementById('budget').value;
+            const speed = document.getElementById('speed').value;
+            const btn = document.getElementById('submit-btn');
+            const loading = document.getElementById('loading');
+            const results = document.getElementById('results');
+            const stepsContainer = document.getElementById('steps-container');
+            
+            // UI States
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Processing...';
+            results.classList.add('hidden');
+            loading.classList.remove('hidden');
+            stepsContainer.innerHTML = '';
+
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/v1/optimize', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        task_description: task,
+                        budget_priority: budget,
+                        speed_priority: speed,
+                        requires_vision: false
+                    })
+                });
+
+                if (!response.ok) throw new Error('API request failed');
+
+                const data = await response.json();
+                
+                document.getElementById('overall-strategy').innerText = data.overall_strategy;
+                
+                const altDiv = document.getElementById('alternative-option');
+                if(data.alternative_budget_option) {
+                    document.getElementById('alt-text').innerText = data.alternative_budget_option;
+                    altDiv.classList.remove('hidden');
+                } else {
+                    altDiv.classList.add('hidden');
+                }
+
+                data.steps.forEach((step, index) => {
+                    const stepEl = document.createElement('div');
+                    stepEl.className = 'relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active';
+                    stepEl.innerHTML = `
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-dark bg-primary text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg shadow-primary/40 z-10">
+                            ${step.step_number}
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800/80 p-5 rounded-xl border border-slate-700 hover:border-primary/50 transition-colors shadow-lg">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-accent">${step.action_type}</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded bg-slate-900 text-slate-300 border border-slate-700">${step.estimated_cost_level}</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-robot mr-2 text-slate-400"></i>${step.recommended_model}</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">${step.reason}</p>
+                        </div>
+                    `;
+                    stepsContainer.appendChild(stepEl);
+                });
+
+                loading.classList.add('hidden');
+                results.classList.remove('hidden');
+                results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            } catch (error) {
+                console.error(error);
+                alert('An error occurred while connecting to the system. Please ensure the FastAPI server (http://127.0.0.1:8000) is working again.');
+                loading.classList.add('hidden');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> <span>Generate AI Recipe</span>';
+            }
+        });
+    </script>
+</body>
+</html>

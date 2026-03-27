@@ -1,0 +1,136 @@
+[
+  {
+    "model_id": "claude-3-5-sonnet",
+    "name": "Claude 3.5 Sonnet",
+    "provider": "Anthropic",
+    "modality": "text-to-text",
+    "performance_metrics": {
+      "coding": 9.8,
+      "creative_writing": 8.5,
+      "logic_reasoning": 9.5,
+      "speed": 9.0
+    },
+    "technical_specs": {
+      "context_window": 200000,
+      "max_output_tokens": 8192,
+      "has_vision": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "input_cost_per_1m": 3.00,
+      "output_cost_per_1m": 15.00,
+      "is_free_tier_available": true
+    },
+    "use_cases": [
+      "complex_coding",
+      "app_architecture",
+      "document_analysis",
+      "bug_fixing"
+    ],
+    "api_integration": {
+      "requires_byok": true,
+      "official_docs_url": "https://docs.anthropic.com/"
+    }
+  },
+  {
+    "model_id": "gpt-4o",
+    "name": "GPT-4o",
+    "provider": "OpenAI",
+    "modality": "text-to-text",
+    "performance_metrics": {
+      "coding": 9.2,
+      "creative_writing": 9.5,
+      "logic_reasoning": 9.6,
+      "speed": 9.5
+    },
+    "technical_specs": {
+      "context_window": 128000,
+      "max_output_tokens": 4096,
+      "has_vision": true
+    },
+    "pricing": {
+      "currency": "USD",
+      "input_cost_per_1m": 5.00,
+      "output_cost_per_1m": 15.00,
+      "is_free_tier_available": false
+    },
+    "use_cases": [
+      "general_purpose",
+      "creative_writing",
+      "vision_analysis",
+      "multilingual_tasks"
+    ],
+    "api_integration": {
+      "requires_byok": true,
+      "official_docs_url": "https://platform.openai.com/docs/"
+    }
+  },
+  {
+    "model_id": "llama-3-70b",
+    "name": "Llama 3 (70B)",
+    "provider": "Meta",
+    "modality": "text-to-text",
+    "performance_metrics": {
+      "coding": 8.0,
+      "creative_writing": 8.2,
+      "logic_reasoning": 8.5,
+      "speed": 9.8
+    },
+    "technical_specs": {
+      "context_window": 8192,
+      "max_output_tokens": 8192,
+      "has_vision": false
+    },
+    "pricing": {
+      "currency": "USD",
+      "input_cost_per_1m": 0.50,
+      "output_cost_per_1m": 0.50,
+      "is_free_tier_available": true
+    },
+    "use_cases": [
+      "basic_coding",
+      "brainstorming",
+      "high_volume_processing",
+      "cost_sensitive_tasks"
+    ],
+    "api_integration": {
+      "requires_byok": true,
+      "official_docs_url": "https://llama.meta.com/docs/"
+    }
+  },
+  {
+    "model_id": "midjourney-v6",
+    "name": "Midjourney v6",
+    "provider": "Midjourney",
+    "modality": "text-to-image",
+    "performance_metrics": {
+      "coding": 0,
+      "creative_writing": 0,
+      "logic_reasoning": 0,
+      "speed": 7.5,
+      "image_quality": 9.9
+    },
+    "technical_specs": {
+      "context_window": 0,
+      "max_output_tokens": 0,
+      "has_vision": false
+    },
+    "pricing": {
+      "currency": "USD",
+      "input_cost_per_1m": 0,
+      "output_cost_per_1m": 0,
+      "is_free_tier_available": false,
+      "subscription_based": true
+    },
+    "use_cases": [
+      "character_design",
+      "ui_mockups",
+      "concept_art",
+      "marketing_materials"
+    ],
+    "api_integration": {
+      "requires_byok": false,
+      "official_docs_url": "https://docs.midjourney.com/"
+    }
+  }
+]
